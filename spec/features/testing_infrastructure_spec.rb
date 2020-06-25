@@ -5,11 +5,12 @@
 #   end
 # end
 
-feature 'Sign in players' do
-  scenario 'player 1 and player 2 enters their names into submission form' do
+feature 'expecting the filled out form to display on screen' do
+  scenario 'A user enters their name into the specified fields' do
     visit('/')
-    fill_in "Name1", :with => "Player one"
-    click_button "Submit"
-    expect(page).to have_text("Player one")
+    fill_in "player_one_name", :with => "Goku"
+    fill_in "player_two_name", :with => "Vegeta"
+    click_button "submit"
+    expect(page).to have_content 'P1 Goku vs P2 Vegeta'
   end
 end
