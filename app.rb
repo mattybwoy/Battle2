@@ -1,7 +1,10 @@
 require 'sinatra/base'
 
 class Battle < Sinatra::Base
-enable :sessions
+  enable :sessions
+  HIT_POINT = 20
+
+
   get '/' do
     erb :index
   end
@@ -11,12 +14,15 @@ enable :sessions
     @player2 = params[:player_two_name]
     session[:playerone] = @player1
     session[:playertwo] = @player2
-    redirect './play'
+    session[:playeronehp] = HIT_POINT
+    session[:playertwohp] = HIT_POINT
+    redirect '/play'
   end
 
   get '/play' do
     @player1 = session[:playerone]
     @player2 = session[:playertwo]
+    @player2hp = session[:playertwohp]
     erb :play
   end
 
