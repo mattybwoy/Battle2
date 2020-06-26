@@ -1,3 +1,9 @@
 <h1>P1 <%= @game.player1.name %> vs P2 <%= @game.player2.name %></h1>
 <h2>P2 <%= @game.attack(@game.player2) %>HP</h2>
-You have attacked
+
+
+<h2> <%= @game.player1.name %> has attacked <%= @game.player2.name %> </h2>
+
+<form action="/player2turn">
+<input type="submit" value="Continue">
+</form>

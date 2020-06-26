@@ -24,5 +24,15 @@ class Battle < Sinatra::Base
     erb :attack
   end
 
+  get '/player2turn' do
+    @game = $game
+    erb :player2turn
+  end
+
+  post '/attackplayer1' do
+    @game = $game
+    erb :attackplayer1
+  end
+  
   run! if app_file == $0
 end
