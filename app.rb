@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player.rb'
+require './lib/game.rb'
 
 class Battle < Sinatra::Base
   enable :sessions
@@ -9,6 +10,7 @@ class Battle < Sinatra::Base
   end
 
   post '/names' do
+    $game = Game.new
     $player1 = Player.new(params[:player_one_name])
     $player2 = Player.new(params[:player_two_name])
     # session[:playeronehp] = HIT_POINT
@@ -24,6 +26,7 @@ class Battle < Sinatra::Base
   end
 
   post '/attack' do
+    @game = $game
     @player1 = $player1
     @player2 = $player2
     @player2hp = session[:playertwohp]

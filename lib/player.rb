@@ -1,6 +1,6 @@
 class Player
-  HIT_POINT = 20
-  attr_reader :name, :point
+    HIT_POINT = 20
+  attr_accessor :name, :point
   
   def initialize(name)
     @name = name
@@ -10,7 +10,5 @@ class Player
   def name
     $real_name = @name
   end
-  def attack
-    @point -= 10
-  end
+
 end
