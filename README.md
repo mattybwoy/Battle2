@@ -2,7 +2,6 @@
 
 User stories 
 
-
 As two Players,
 So we can play a personalised game of Battle,
 We want to Start a fight by entering our Names and seeing them
@@ -38,3 +37,8 @@ I want Player 2's attack to reduce my HP by 10
 As a Player,
 So I can Lose a game of Battle,
 I want to see a 'Lose' message if I reach 0HP first
+
+#
+Using sinatra, cabybara and rackup for setting up this project. First and foremost, many thanks to my pairing partners this week, Josh Ng, Alex Klink, Arav Patel, Sam Landman and Rabee Mghrabi.
+
+We created a simple game called Battle where you can attack your opponent to reduce their HP. We used an MVC model for creating this web app.

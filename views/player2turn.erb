@@ -1,9 +1,9 @@
 <%if @game.player2.point == 0%>
-<h1> P2 Loses </h2>
+<h1> P2 Loses </h1>
 <%else%>
 <h1>P1 <%= @game.player1.name %> vs P2 <%= @game.player2.name %></h1>
 
-<h1> <%= @game.player2.name %>'s turn <h2>
+<h2> <%= @game.player2.name %>'s turn <h2>
 
 <h2>P1 <%= @game.player1.point %>HP</h2>
 <form action="/attackplayer1" method="post">
